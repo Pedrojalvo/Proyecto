@@ -1,12 +1,13 @@
 package dominio;
-import java.io.*;
+import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.List;
 
-class Equipo implements Serializable {
+public class Equipo implements Serializable {
     private static final long serialVersionUID = 1L;
 
     private String nombre;
-    private transient ArrayList<Jugador> jugadores; 
+    private List<Jugador> jugadores;
 
     public Equipo(String nombre) {
         this.nombre = nombre;
@@ -21,7 +22,22 @@ class Equipo implements Serializable {
         jugadores.add(jugador);
     }
 
-    public ArrayList<Jugador> getJugadores() {
+    public List<Jugador> getJugadores() {
         return jugadores;
     }
+
+    public int getTotalGolesEquipo() {
+        int totalGoles = 0;
+        for (Jugador jugador : jugadores) {
+            totalGoles += jugador.getGoles();
+        }
+        return totalGoles;
+    }
+
+    @Override
+    public String toString() {
+        return "Equipo: " + nombre + " - Jugadores: " + jugadores.size();
+    }
 }
+
+

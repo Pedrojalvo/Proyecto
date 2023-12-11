@@ -1,25 +1,34 @@
 package dominio;
 import java.io.*;
 import java.util.ArrayList;
+import java.util.List;
 
-class Partido implements Serializable {
+public class Partido implements Serializable {
     private static final long serialVersionUID = 1L;
 
     private Equipo local;
     private Equipo visitante;
-    private String resultado;
+    private List<Gol> goles;
 
     public Partido(Equipo local, Equipo visitante) {
         this.local = local;
         this.visitante = visitante;
-        this.resultado = "0 - 0"; // Resultado inicial
+        this.goles = new ArrayList<>();
     }
 
-    public String getResultado() {
-        return resultado;
+    public void registrarGol(Jugador jugador) {
+        goles.add(new Gol(jugador));
+        jugador.marcarGol();
     }
 
-    public void jugarPartido(int golesLocal, int golesVisitante) {
-        this.resultado = golesLocal + " - " + golesVisitante;
+    public List<Gol> getGoles() {
+        return goles;
+    }
+
+    @Override
+    public String toString() {
+        return "Partido: " + local.getNombre() + " vs " + visitante.getNombre() + " - Goles: " + goles.size();
     }
 }
+
+
