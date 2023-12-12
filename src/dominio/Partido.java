@@ -30,5 +30,3 @@ public class Partido implements Serializable {
         return "Partido: " + local.getNombre() + " vs " + visitante.getNombre() + " - Goles: " + goles.size();
     }
 }
-
-

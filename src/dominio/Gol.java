@@ -1,10 +1,7 @@
 package dominio;
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
-import Jugador;
 
-class Gol implements Serializable {
+public class Gol implements Serializable {
     private static final long serialVersionUID = 1L;
 
     private Jugador jugador;
@@ -16,4 +13,6 @@ class Gol implements Serializable {
     public Jugador getJugador() {
         return jugador;
     }
+
+
 }
