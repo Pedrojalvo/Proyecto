@@ -1,4 +1,10 @@
+/**
+ * La clase Principal es el punto de entrada de la aplicación.
+ * Aquí se crea la interfaz y se simula un escenario de fútbol.
+ * Se crean equipos, jugadores y se registra un partido entre ellos.
+ */
 package aplicacion;
+
 import presentacion.Interfaz;
 import dominio.Equipo;
 import dominio.Partido;
@@ -6,6 +12,12 @@ import dominio.Jugador;
 
 public class Principal {
 
+    /**
+     * Método principal que inicia la aplicación.
+     * Se crean equipos, jugadores, se registra un partido entre ellos
+     * y se muestra la información relevante en la interfaz.
+     * @param args Argumentos de línea de comandos (no se utilizan en esta aplicación).
+     */
     public static void main(String[] args) {
         Interfaz interfaz = new Interfaz();
 
@@ -35,5 +47,4 @@ public class Principal {
         interfaz.mostrarInfoPartidos();
     }
 }
-
 

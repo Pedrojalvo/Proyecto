@@ -6,6 +6,10 @@ import dominio.*;
 public class Interfaz {
     private List<Equipo> equipos;
     private List<Partido> partidos;
+    /**
+     * Constructor de la clase Interfaz.
+     * Carga los equipos y partidos desde archivos o crea listas nuevas si no se encuentran los archivos.
+     */
 
     public Interfaz() {
         this.equipos = cargarEquipos();
